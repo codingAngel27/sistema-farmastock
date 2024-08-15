@@ -8,27 +8,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    <section class="vh-100" style="background-color: #070F2B;">
+    <section class="vh-100" style="background-image: radial-gradient(circle at 74.18% -16.45%, #83d1fc 0, #64c3f7 25%, #3cb5f2 50%, #00a7ed 75%, #009ae8 100%);">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src=""
-                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                                <img src="~/img/farmastock.jpg"
+                                     alt="login form" class="img-fluid w-100 h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
                             </div>
-                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+
+                            <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color: #F5EDED;">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
                                     <form asp-controller="Usuario" asp-action="Login" method="post">
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
-                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                            <span class="h1 fw-bold mb-0">Inventario Farmacia</span>
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #36C2CE;"></i>
+                                            <span class="h1 fw-bold mb-0">Bienvenido</span>
                                         </div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">
@@ -56,11 +58,8 @@
                                                 </div>
                                             </div>
                                         }
-
-                                        <a class="small text-muted" href="#!">¿Olvidó su contraseña?</a>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">
-                                            ¿No tienes una cuenta? <a class="btn btn-primary" href="@Url.Action("Registrar","Usuario")"
-                                                                      style="color: #393f81;">Regístrese aquí</a>
+                                            ¿No tienes una cuenta? <a class="btn btn-link" href="@Url.Action("Registrar","Usuario")">Regístrese aquí</a>
                                         </p>
                                     </form>
 

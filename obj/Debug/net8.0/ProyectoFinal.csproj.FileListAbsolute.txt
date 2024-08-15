@@ -252,3 +252,4 @@ D:\5to Ciclo CIBERTEC\SEGUNDO MODULO\Desarrollo de Servicios Web 1\proyectoCurso
 D:\5to Ciclo CIBERTEC\SEGUNDO MODULO\Desarrollo de Servicios Web 1\proyectoCurso\sistema-inventario\ProyectoFinal\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\5to Ciclo CIBERTEC\SEGUNDO MODULO\Desarrollo de Servicios Web 1\proyectoCurso\sistema-inventario\ProyectoFinal\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\5to Ciclo CIBERTEC\SEGUNDO MODULO\Desarrollo de Servicios Web 1\proyectoCurso\sistema-inventario\ProyectoFinal\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\5to Ciclo CIBERTEC\SEGUNDO MODULO\Desarrollo de Servicios Web 1\proyectoCurso\sistema-inventario\ProyectoFinal\obj\Debug\net8.0\ProyectoFinal.sourcelink.json

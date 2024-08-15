@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\ProyectoFinal.bundle.scp.css"
     },
     {
+      "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\img\\farmastock.jpg",
+      "PackagePath": "staticwebassets\\img\\farmastock.jpg"
+    },
+    {
+      "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
       "Id": "D:\\5to Ciclo CIBERTEC\\SEGUNDO MODULO\\Desarrollo de Servicios Web 1\\proyectoCurso\\sistema-inventario\\ProyectoFinal\\wwwroot\\js\\site.js",
