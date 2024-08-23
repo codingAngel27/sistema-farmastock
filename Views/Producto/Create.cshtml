@@ -1,0 +1,65 @@
+﻿@model ProyectoFinal.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<h4 class="text-center text-black">NUEVO REGISTO</h4>
+<h3 class="text-center text-black"><em>Ingresa los datos para un nuevo registro:</em></h3>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="form-group">
+                <label asp-for="idProd" class="control-label">ID</label>
+                <input asp-for="idProd" class="form-control" placeholder="ID" readonly />
+                <span asp-validation-for="idProd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="codPro" class="control-label">Código Producto</label>
+                <input asp-for="codPro" class="form-control" placeholder="Ingresa el Código" />
+                <span asp-validation-for="codPro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nomPro" class="control-label">Nombre Producto</label>
+                <input asp-for="nomPro" class="form-control" placeholder="Ingresa el nombre" />
+                <span asp-validation-for="nomPro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="proveedor" class="control-label">Proveedor</label>
+                <select asp-for="nomProvee" asp-items="@ViewBag.proveedor" class="form-control">
+                    <option>Seleccionar el Proveedor...</option>
+                </select>
+                <span asp-validation-for="proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="stock" class="control-label">Stock</label>
+                <input asp-for="stock" class="form-control" placeholder="Ingresa el Stock" type="number" min="0" />
+                <span asp-validation-for="stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="precio" class="control-label">Precio</label>
+                <input asp-for="precio" class="form-control" placeholder="Ingresa el Precio" type="number" step="0.01" min="0" />
+                <span asp-validation-for="precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaCompra" class="control-label">Fecha de Compra</label>
+                <input asp-for="fechaCompra" class="form-control" type="date" />
+                <span asp-validation-for="fechaCompra" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <a asp-action="Index" class="btn btn-danger"><i class="fa fa-undo" aria-hidden="true"></i> Regresar</a>
+                <input type="submit" value="Añadir Producto" class="btn btn-success ml-2" />
+            </div>
+        </form>
+        <br />
+        <div class="text-center">@ViewBag.mensaje</div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+

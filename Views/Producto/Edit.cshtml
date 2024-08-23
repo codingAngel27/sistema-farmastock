@@ -1,0 +1,89 @@
+﻿@model ProyectoFinal.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-group label {
+            font-weight: bold;
+        }
+        .alert-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <br />
+            <h5><em>¿Estás seguro de que deseas actualizar el registro?</em></h5>
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="form-group">
+                        <label asp-for="idProd" class="control-label">ID del Producto:</label>
+                        <input asp-for="idProd" class="form-control" readonly />
+                        <span asp-validation-for="idProd" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="codPro" class="control-label">Código del Producto:</label>
+                        <input asp-for="codPro" class="form-control" />
+                        <span asp-validation-for="codPro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="nomPro" class="control-label">Nombre del Producto:</label>
+                        <input asp-for="nomPro" class="form-control" />
+                        <span asp-validation-for="nomPro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="proveedor" class="control-label">Proveedor:</label>
+                        <select asp-for="nomProvee" asp-items="@ViewBag.proveedor" class="form-control">
+                        <option>Seleccionar el Proveedor...</option></select>
+                         <span asp-validation-for="proveedor" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="stock" class="control-label">Stock:</label>
+                        <input asp-for="stock" class="form-control" />
+                        <span asp-validation-for="stock" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="precio" class="control-label">Precio:</label>
+                        <input asp-for="precio" class="form-control" />
+                        <span asp-validation-for="precio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="fechaCompra" class="control-label">Fecha de Compra:</label>
+                        <input asp-for="fechaCompra" type="date" class="form-control" />
+                        <span asp-validation-for="fechaCompra" class="text-danger"></span>
+                    </div>
+                    <div class="form-group text-center">
+                        <a asp-action="Index" class="btn btn-danger"><i class="fa fa-undo" aria-hidden="true"></i> Regresar</a>
+                        <input type="submit" value="Actualizar" class="btn btn-primary ml-2" />
+                    </div>
+                </form>
+                <!-- Alerta para el mensaje -->
+                @if (ViewBag.mensaje != null)
+                {
+                    <div class="alert @ViewBag.alertClass alert-dismissible fade show alert-container" role="alert">
+                        @ViewBag.mensaje
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

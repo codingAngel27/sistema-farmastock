@@ -1,0 +1,69 @@
+﻿@model ProyectoFinal.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .product-details dt {
+            font-weight: bold;
+        }
+
+        .product-details dd {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h4 class="text-center text-dark">ELIMINAR PRODUCTO</h4>
+        <div class="card">
+            <div class="card-body">
+                <h5>Detalle del Producto</h5>
+                <hr />
+                <dl class="row product-details">
+                    <dt class="col-sm-3">ID:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.idProd)</dd>
+
+                    <dt class="col-sm-3">Cod. Producto:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.codPro)</dd>
+
+                    <dt class="col-sm-3">Nombre del Producto:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.nomPro)</dd>
+
+                    <dt class="col-sm-3">ID Proveedor:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.proveedor)</dd>
+
+                    <dt class="col-sm-3">Nombre del Proveedor:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.nomProvee)</dd>
+
+                    <dt class="col-sm-3">Stock:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.stock)</dd>
+
+                    <dt class="col-sm-3">Precio:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.precio)</dd>
+
+                    <dt class="col-sm-3">Fecha de Compra:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.fechaCompra)</dd>
+                </dl>
+                <form asp-action="Delete" method="post">
+                    <a asp-action="Index" class="btn btn-outline-danger"><i class="fa fa-undo" aria-hidden="true"></i> Regresar</a>
+                    <button type="submit" class="btn btn-danger ml-2" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
