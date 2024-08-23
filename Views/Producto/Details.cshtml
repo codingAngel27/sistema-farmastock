@@ -1,0 +1,52 @@
+﻿@model ProyectoFinal.Models.ProductoModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center text-black mb-4">DETALLE DEL PRODUCTO</h3>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4 col-md-3"><strong>ID:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.idProd)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Cod. Producto:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.codPro)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Nombre del Producto:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.nomPro)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Cod. Proveedor:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.proveedor)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Nombre del Proveedor:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.nomProvee)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Stock:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.stock)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Precio:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.precio)</dd>
+
+                    <dt class="col-sm-4 col-md-3"><strong>Fecha de la Compra:</strong></dt>
+                    <dd class="col-sm-8 col-md-9">@Html.DisplayFor(model => model.fechaCompra)</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-action="Index" class="btn btn-danger">
+                <i class="fa fa-undo" aria-hidden="true"></i> Regresar
+            </a>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>

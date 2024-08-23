@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ProyectoFinal.Models.ProductoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<h3 class="text-lg-center text-black"> LISTADO DE PRODUCTOS </h3>
+<hr />
+<div class="d-flex justify-content-between align-items-center">
+    <a asp-action="Create" class="btn btn-primary btn-sm">
+        <i class="fa fa-hand-o-left" style="font-size:24px"></i> + Registrar Productos
+    </a>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <strong><em>Ingresar el Nombre del Producto: </em></strong>
+            <input type="text" name="nombre" value="" />
+            <button type="submit" class="btn btn-success btn-sm">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        }
+    </div>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@*@Html.DisplayNameFor(model => model.idProd)*@ID</th>
+            <th>@*@Html.DisplayNameFor(model => model.codPro)*@Código</th>
+            <th>@*@Html.DisplayNameFor(model => model.nomPro)*@Nombre</th>
+            <th>@*@Html.DisplayNameFor(model => model.proveedor)*@Proveedor</th>
+            <th>@*@Html.DisplayNameFor(model => model.stock)*@Stock</th>
+            <th>@*@Html.DisplayNameFor(model => model.precio)*@Precio</th>
+            <th>@*@Html.DisplayNameFor(model => model.fechaCompra)*@Fecha Compra</th>
+            <th>Opciones:</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codPro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomPro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomProvee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaCompra)
+            </td>
+            <td>
+                    <a href="@Url.Action("Edit", "Producto", new { id = item.idProd })" class="btn btn-primary btn-sm">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="@Url.Action("Details", "Producto", new { id = item.idProd })" class="btn btn-success btn-sm">
+                        <i class="fas fa-info-circle"></i>
+                    </a> |
+                    <a href="@Url.Action("Delete", "Producto", new { id = item.idProd })" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
