@@ -1,0 +1,61 @@
+﻿@model ProyectoFinal.Models.Proveedor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/proveedor.css" />
+</head>
+<body>
+
+    <h1 class="text-center">Crear Proveedor</h1>
+
+    <hr />
+
+    <div class="create-form-container">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="create-text-danger"></div>
+
+            <div class="create-form-group">
+                <label asp-for="ruc" class="control-label">RUC</label>
+                <input asp-for="ruc" class="create-form-control" />
+                <span asp-validation-for="ruc" class="create-text-danger"></span>
+            </div>
+
+            <div class="create-form-group">
+                <label asp-for="nomProvee" class="control-label">Nombre del Proveedor</label>
+                <input asp-for="nomProvee" class="create-form-control" />
+                <span asp-validation-for="nomProvee" class="create-text-danger"></span>
+            </div>
+
+            <div class="create-form-group">
+                <label asp-for="email" class="control-label">Correo Electrónico</label>
+                <input asp-for="email" class="create-form-control" />
+                <span asp-validation-for="email" class="create-text-danger"></span>
+            </div>
+
+            <div class="create-form-group">
+                <label asp-for="telefono" class="control-label">Teléfono</label>
+                <input asp-for="telefono" class="create-form-control" />
+                <span asp-validation-for="telefono" class="create-text-danger"></span>
+            </div>
+
+            <div class="create-form-group">
+                <label asp-for="direccion" class="control-label">Dirección</label>
+                <input asp-for="direccion" class="create-form-control" />
+                <span asp-validation-for="direccion" class="create-text-danger"></span>
+            </div>
+
+            <div class="create-form-group">
+                <input type="submit" value="Create" class="create-btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="" class="create-back-link">Volver</a>
+    </div>
+
+</body>
+

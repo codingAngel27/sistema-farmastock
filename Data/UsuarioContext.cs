@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 namespace ProyectoFinal.Data
 {
     public class UsuarioContext : DbContext
