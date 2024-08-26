@@ -1,0 +1,74 @@
+﻿@model ProyectoFinal.Models.ProductoProveedor
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/proveedor.css" />
+
+<h1 class="text-center">Ingresar Solicitud</h1>
+
+<form method="get" class="solic-form-container">
+    <div class="solic-form-group">
+        <strong>Ingrese Nombre</strong>
+        @Html.TextBox("nomPro", "", new { @class = "solic-form-control" })
+        <button type="submit" class="solic-btn-primary">Buscar</button>
+    </div>
+</form>
+<br />
+
+<div class="solic-form-container">
+    <form asp-action="Create">
+
+        <input asp-for="idProducto" class="solic-form-control" hidden />
+        <input asp-for="idProveedor" class="solic-form-control" hidden />
+
+        <div class="solic-form-group">
+            <label class="form-label">Producto</label>
+            <input asp-for="nomProducto" class="solic-form-control" readonly />
+            <span asp-validation-for="nomProducto" class="text-danger"></span>
+        </div>
+
+        <div class="solic-form-group">
+            <label class="form-label">Proveedor</label>
+            <input asp-for="nomProveedor" class="solic-form-control" readonly />
+            <span asp-validation-for="nomProveedor" class="text-danger"></span>
+        </div>
+
+        <div class="solic-form-group">
+            <label class="form-label">Correo</label>
+            <input asp-for="correo" class="solic-form-control" readonly />
+            <span asp-validation-for="correo" class="text-danger"></span>
+        </div>
+
+        <div class="solic-form-group">
+            <label class="form-label">Cantidad</label>
+            <input asp-for="cantidad" class="solic-form-control" />
+            <span asp-validation-for="cantidad" class="text-danger"></span>
+        </div>
+
+        <div class="solic-form-group">
+            <label class="form-label">Fecha</label>
+            <input asp-for="fechaCompra" class="solic-form-control" type="date" />
+            <span asp-validation-for="fechaCompra" class="text-danger"></span>
+        </div>
+
+        <div class="solic-form-group">
+            <label class="form-label">Descripción</label>
+            <input asp-for="descripcion" class="solic-form-control" />
+            <span asp-validation-for="descripcion" class="text-danger"></span>
+        </div>
+
+        <br />
+        <div class="solic-form-group">
+            <button type="submit" class="solic-btn-primary">Guardar</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="listarSolicitud" class="create-back-link">Volver</a>
+</div>
+
+
+

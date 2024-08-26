@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InventarioFarmaciaDSWI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="wrapper">
@@ -43,10 +44,11 @@
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a asp-area="" asp-controller="Home" asp-action="Index" class="sidebar-link">Index</a>
+                                <a asp-area="" asp-controller="Proveedor" asp-action="Index" class="sidebar-link">Proveedor</a>
                             </li>
                             <li class="sidebar-item">
-                                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="sidebar-link">Privacy</a>
+                                <a href="#" class="sidebar-link collapse data"></a>
+                                <a asp-area="" asp-controller="SolicitudesReabastecimiento" asp-action="Index" class="sidebar-link">Solicitudes</a>
                             </li>
                             <li class="sidebar-item">
                                 <a asp-area="" asp-controller="Home" asp-action="Privacy" class="sidebar-link">Privacy</a>

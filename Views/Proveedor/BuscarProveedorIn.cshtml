@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "BuscarProveedorIn";
+}
+
+<h1 class="text-center">Proveedores</h1>
+
+<p>
+    <a asp-action="Create">Nuevo Proveedor</a>
+</p>
+
+@using (Html.BeginForm())
+{
+    <strong>Ingrese Nombre</strong>
+    @Html.TextBox("nomProvee","")
+    ;
+    <button class="btn btn-success">Procesar</button>
+}
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ruc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomProvee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ruc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomProvee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direccion)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                    @using (Html.BeginForm("Delete", "Proveedor", FormMethod.Post, new { id = "delete-form-" + item.id }))
+                    {
+                        @Html.Hidden("id", item.id)
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@for (int i = 0; i < (int)ViewBag.paginas; i++)
+{
+    @Html.ActionLink((i + 1).ToString(),"BuscarProveedorIn",
+    new {pag = i},new {@class = "btn btn-success"})
+    <span style="white:24px"></span>
+}
+
+<div>
+    <a asp-action="BuscarProveedorIn">Listar</a>
+</div>

@@ -1,0 +1,44 @@
+﻿@model ProyectoFinal.Models.Proveedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="~/css/proveedor.css" />
+
+<h1 class="text-center">Detalle Proveedor</h1>
+
+<div class="details-container">
+   
+    <hr />
+    <form>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.id)</label>
+            <input type="text" class="details-form-control" value="@Html.DisplayFor(model => model.id)" readonly />
+        </div>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.ruc)</label>
+            <input type="text" class="details-form-control" value="@Html.DisplayFor(model => model.ruc)" readonly />
+        </div>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.nomProvee)</label>
+            <input type="text" class="details-form-control" value="@Html.DisplayFor(model => model.nomProvee)" readonly />
+        </div>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.email)</label>
+            <input type="email" class="details-form-control" value="@Html.DisplayFor(model => model.email)" readonly />
+        </div>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.telefono)</label>
+            <input type="text" class="details-form-control" value="@Html.DisplayFor(model => model.telefono)" readonly />
+        </div>
+        <div class="details-form-group">
+            <label>@Html.DisplayNameFor(model => model.direccion)</label>
+            <input type="text" class="details-form-control" value="@Html.DisplayFor(model => model.direccion)" readonly />
+        </div>
+    </form>
+</div>
+
+<div class="details-back-button">
+    <a asp-action="Index" class="details-btn-primary">Volver</a>
+</div>

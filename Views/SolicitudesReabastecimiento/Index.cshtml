@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ProyectoFinal.Models.ProductoProveedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">LISTA DE SOLICITUDES</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo requerimiento</a>
+</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaCompra)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaCompra)
+            </td>
+           
+        </tr>
+
+
+}
+    </tbody>
+</table>
+
+@for (int i = 0; i < (int)ViewBag.paginas; i++)
+{
+    @Html.ActionLink((i + 1).ToString(),"Index",
+    new {pag = i},new {@class = "btn btn-success"})
+    <span style="white:24px"></span>
+}

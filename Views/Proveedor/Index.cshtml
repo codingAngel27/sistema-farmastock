@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/proveedor.css" />
+</head>
+<body>
+
+    <h1 class="text-center">Lista de Proveedores</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Agregar</a>
+    </p>
+
+    @using (Html.BeginForm())
+    {
+        <strong>Ingrese Nombre</strong>
+        @Html.TextBox("nomProvee","")
+        ;
+        <button class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i>Procesar</button>
+    }
+    <br />
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th> ID</th>
+                <th>
+                    RUC
+                </th>
+                <th>
+                    Nombre Proveedor
+                </th>
+                <th>
+                    Correo
+                </th>
+                <th>
+                    Telefono
+                </th>
+                <th>
+                    Direccion
+                </th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ruc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomProvee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.direccion)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Proveedor", new { id = item.id })" class="btn btn-primary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="@Url.Action("Details", "Proveedor", new { id = item.id })" class="btn btn-success">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                        @using (Html.BeginForm("Delete", "Proveedor", FormMethod.Post, new { id = "delete-form-" + item.id }))
+                        {
+                            @Html.Hidden("id", item.id)
+                            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @for (int i = 0; i < (int)ViewBag.paginas; i++)
+    {
+        @Html.ActionLink((i + 1).ToString(),"BuscarProveedorIn",
+    new {pag = i},new {@class = "btn btn-success"})
+        <span style="white:24px"></span>
+    }
+
+    <div>
+        <a asp-action="Index">Listar</a>
+    </div>
+
+
+</body>
